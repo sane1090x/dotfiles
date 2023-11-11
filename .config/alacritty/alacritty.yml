@@ -1,0 +1,24 @@
+import:
+  - ~/.config/alacritty/colors.yml
+  - ~/.config/alacritty/fonts.yml
+
+env:
+  TERM: alacritty
+  WINIT_X11_SCALE_FACTOR: '1.0'
+
+window:
+  dimensions:
+    columns: 115
+    lines: 20
+  padding:
+    x: 20
+    y: 20
+  dynamic_title: true
+  gtk_theme_variant: dark
+
+cursor:
+  style:
+    shape: Block
+  unfocused_hollow: false
+
+live_config_reload: true
