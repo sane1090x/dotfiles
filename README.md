@@ -20,7 +20,7 @@
 
 ## Appearance
 
-- GTK Theme: [Everforest GTK Theme](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme)
+- GTK Theme: [Tokyo Night GTK Theme](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)
 - Fonts: [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip)
 
 ## Plain Desktop
