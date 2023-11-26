@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+### date written: 14-11-2023
+
 # colors
 col_reset='\033[0m'
 
