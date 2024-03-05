@@ -24,19 +24,6 @@ else
 fi
 
 install_dotfiles() {
-    echo
-    echo -e "${b_blue}Cloning repositories...${col_reset}"
-    echo
-
-    sleep 0.5
-
-    if [[ -d "/tmp/dotfiles" ]]; then
-        cd /tmp/dotfiles || exit
-    else
-        git clone --depth 1 --quiet https://github.com/sane1090x/dotfiles /tmp/dotfiles
-        cd /tmp/dotfiles || exit
-    fi
-
     # if these files exist, ask the user for permission to overwrite
     if [ -e "$zshrc" ] && [ -e "$zshenv" ] && [ -e "$zprofile" ] && [ -e "$p10kzsh" ]; then
         echo -en "${b_yellow}Conflicts found! Overwrite one or more files '.zshrc .zshenv .zprofile .p10k.zsh'? [y/N] ${col_reset}"
@@ -56,10 +43,10 @@ install_dotfiles() {
 
     # check if the last command left an empty line in the prompt
     if [[ -z "$PROMPT_EOL" ]]; then
-        echo -en "${b_yellow}Overwrite one or more directories 'alacritty cava fontconfig hypr lvim spicetify waybar'? [y/N] ${col_reset}"
+        echo -en "${b_yellow}Overwrite one or more directories 'alacritty cava fontconfig gtk-2.0 gtk-3.0 hypr lvim nvim nwg-look qt5ct qt6ct spicetify waybar'? [y/N] ${col_reset}"
         read -r res2
     else
-        echo -en "${b_yellow}Overwrite one or more directories 'alacritty cava fontconfig hypr lvim spicetify waybar'? [y/N] ${col_reset}"
+        echo -en "${b_yellow}Overwrite one or more directories 'alacritty cava fontconfig gtk-2.0 gtk-3.0 hypr lvim nvim nwg-look qt5ct qt6ct spicetify waybar'? [y/N] ${col_reset}"
         read -r res2
         echo
     fi

@@ -1,87 +1,55 @@
 {
-    "height": 33, // Waybar height (to be removed for auto height)
-    "spacing": 8, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock"],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "margin-top": 15,
+    "modules-left": ["battery", "pulseaudio", "backlight"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["network", "clock"],
+
+    "battery": {
+        "format": "bat: {capacity}%",
+        "format-charging": "charging: {capacity}%"
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%I:%M %p}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon} ",
-        "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%a, %d. %b  %I:%M %p}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% ",
-        "format-bluetooth-muted": "󰝟 ",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        "format": "vol: {volume}%",
+        "format-bluetooth": "blu: {volume}%",
+        "format-muted": "vol: muted",
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
     },
+    "network": {
+        "interface": "wlo1",
+        "format": "{ifname}",
+        "format-wifi": "wlo1: {essid}",
+        "format-ethernet": "eno1: {ipaddr}/{cidr}",
+        "format-disconnected": "wlo1: disconnected",
+        "max-length": 50
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+        },
+        "sort-by-number": true
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "bl: {percent}%",
+    }
 }
-
