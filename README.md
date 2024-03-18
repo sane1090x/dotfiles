@@ -20,7 +20,7 @@
 
 ## Appearance
 
-- GTK Theme: [Everforest GTK Theme](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme)
+- GTK Theme: [Graphite GTK Theme](https://github.com/vinceliuice/Graphite-gtk-theme)
 - Fonts: [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip)
 
 ## Plain Desktop
